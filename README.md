@@ -1,2 +1,2 @@
 # YouTube-M-zik-Y-kle
-YouTube Kanallarınıza Müzik Yükleyebiliyorsunuz Kuduko Müzik Yapım sayesinde
+YouTube Kanallarınıza Müzik Yükleyebiliyorsunuz Kuduko Müzik Yapım sayesinde YouTube Kanallarınıza Müzik Yüklemek için Google Client'de YouTube Apı Key V3 ü Etkinleştirmeniz Gerekiyor https://console.cloud.google.com Etkinleştirdiğinizden sonra OAuth client ID oradan yapmanız gereken kısımları almanız gerekiyor 
