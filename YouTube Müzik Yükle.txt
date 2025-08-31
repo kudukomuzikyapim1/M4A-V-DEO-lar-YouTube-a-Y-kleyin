@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>YouTube Müzik Yükle</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      text-align: center;
+      padding: 20px;
+      background: #fff;
+      color: #000;
+    }
+    input, button, select, textarea {
+      width: 90%;
+      max-width: 500px;
+      margin: 10px auto;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+      display: block;
+    }
+    button {
+      background: #ff4b2b;
+      color: #fff;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    button:hover { background: #ff416c; }
+    .btn-link {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px 20px;
+      background: #d00;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+    }
+    #yt-desc, #log {
+      text-align: left;
+      background: #151515;
+      color: #ddd;
+      padding: 12px;
+      margin: 10px auto;
+      max-width: 500px;
+      border-radius: 8px;
+      font-size: 13px;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>YouTube Müzik Yükle</h2>
+
+  <input id="title" placeholder="Şarkı Adı — Sanatçı Adı" />
+  <textarea id="desc" placeholder="Video açıklaması..."></textarea>
+
+  <select id="privacy">
+    <option value="private">Gizli</option>
+    <option value="unlisted">Liste Dışı</option>
+    <option value="public">Herkese Açık</option>
+  </select>
+
+  <input id="file" type="file" accept="video/*" />
+  <input id="thumbnail" type="file" accept="image/*" />
+  <input id="releaseDate" type="date" />
+
+  <button id="auth">Google ile Giriş Yap</button>
+  <button id="uploadYT" disabled>YouTube'a Yükle</button>
+  <button id="uploadDrive" disabled>Drive'a Yükle</button>
+
+  <a class="btn-link" href="https://kudukomuzikyapim.blogspot.com/p/muzik-albumu-satn-al.html" target="_blank">Satın Al</a>
+
+  <div>
+    <div style="background:#2a2a2a; color:#fff; padding:10px; border-radius:10px; display:flex; align-items:center; gap:10px; margin-top:10px; justify-content:center;">
+      <span id="copyText">@KudukoMüzikYapım.Official</span>
+      <button onclick="copyToClipboard('copyText')" style="background:#ff0000; color:white; border:none; padding:5px 10px; border-radius:5px; cursor:pointer;">📋 Kopyala</button>
+    </div>
+
+    <div id="yt-desc">
+      <p>Provided to YouTube by Kuduko Müzik Yapım</p>
+      <p><strong id="sampleTitle">Şarkı Adı (Official Music)</strong> · Kuduko Müzik Yapım</p>
+      <p id="sampleRepeat">Şarkı Adı (Official Music)</p>
+      <p>℗ Kuduko Müzik Yapım</p>
+      <br>
+      <p>YouTube Kanalı: https://www.youtube.com/@KudukoMüzikYapım.Official</p>
+      <p>İnstagram: https://instagram.com/kudukomuzikyapim</p>
+      <p>TikTok: https://www.tiktok.com/@kudukomuzikyapm.official</p>
+      <p>Snapchat: https://www.snapchat.com/@kuduko550</p>
+      <p>Linkedin: https://www.linkedin.com/company/kudukomuzikyapim</p>
+      <p>Discogs: https://www.discogs.com/release/33396431-Kuduko-M%C3%BCzik-Yap%C4%B1m-Plak-%C5%9Eirketi</p>
+      <p>WhatsApp Grubumuza Katılın: https://grupbul.com/grup/645305</p>
+      <p>Web site: https://kudukomuzikyapim.blogspot.com</p>
+      <p>Mağaza: https://kudukomuzikyapim.company.site</p>
+      <p>℗ & © Kuduko Müzik Yapım. Tüm hakları saklıdır.</p>
+      <p id="releaseDateParagraph" style="margin-top: 10px; font-style: italic;"></p>
+    </div>
+
+    <button onclick="copyToClipboard('yt-desc')" style="margin-top:10px; padding:6px 12px; cursor:pointer; border:none; border-radius:5px; background:#ff0000; color:#fff;">📋 Açıklamayı Kopyala</button>
+
+    <pre id="log"></pre>
+
+    <iframe width="100%" height="300" src="https://www.youtube.com/embed/B5lL1mn3LpU" frameborder="0" allowfullscreen></iframe>
+
+    <a class="btn-link" href="https://kudukomuzikyapim.blogspot.com/p/yaynlar_28.html" target="_blank">Yayınlar Sayfası</a>
+  </div>
+
+  <script>
+    function copyToClipboard(id) {
+      const el = document.getElementById(id);
+      const text = el.innerText || el.textContent;
+      navigator.clipboard.writeText(text).then(() => alert('Kopyalandı!'));
+    }
+
+    document.getElementById('title').addEventListener('input', (e) => {
+      const t = e.target.value || 'Şarkı Adı (Official Music)';
+      document.getElementById('sampleTitle').innerText = t;
+      document.getElementById('sampleRepeat').innerText = t;
+    });
+
+    // releaseDate alanındaki tarihi formatlayıp "Released on YYYY-MM-DD" şeklinde gösterir
+    document.getElementById('releaseDate').addEventListener('change', (e) => {
+      const dateStr = e.target.value;
+      if (dateStr) {
+        document.getElementById('releaseDateParagraph').textContent = `Released on ${dateStr}`;
+      } else {
+        document.getElementById('releaseDateParagraph').textContent = '';
+      }
+    });
+
+    const CLIENT_ID = '831662029531-53aq67biqbtjjjv02fp971qau0lk8mp8.apps.googleusercontent.com';
+    const SCOPES = 'https://www.googleapis.com/auth/youtube.upload https://www.googleapis.com/auth/drive.file https://www.googleapis.com/auth/youtube';
+
+    let accessToken = null;
+
+    window.onload = () => {
+      const script = document.createElement('script');
+      script.src = 'https://accounts.google.com/gsi/client';
+      document.body.appendChild(script);
+    };
+
+    document.getElementById('auth').onclick = () => {
+      const tokenClient = google.accounts.oauth2.initTokenClient({
+        client_id: CLIENT_ID,
+        scope: SCOPES,
+        callback: (tokenResponse) => {
+          accessToken = tokenResponse.access_token;
+          document.getElementById('uploadYT').disabled = false;
+          document.getElementById('uploadDrive').disabled = false;
+        }
+      });
+      tokenClient.requestAccessToken();
+    };
+
+    function log(msg) {
+      document.getElementById('log').textContent += msg + '\n';
+    }
+
+    document.getElementById('uploadYT').onclick = async () => {
+      const fileInput = document.getElementById('file');
+      const thumbnailInput = document.getElementById('thumbnail');
+      const title = document.getElementById('title').value || 'Şarkı Adı (Official Music)';
+      const description = document.getElementById('desc').value || '';
+      const privacy = document.getElementById('privacy').value;
+      const releaseDate = document.getElementById('releaseDate').value;
+
+      if (!fileInput.files.length) {
+        alert("Lütfen bir video dosyası seçin.");
+        return;
+      }
+
+      const file = fileInput.files[0];
+
+      log("YouTube'a Video yükleniyor...");
+
+      // YouTube açıklamasına tarih eklemiyoruz (kullanıcının metnini olduğu gibi gönderiyoruz)
+      // YouTube API'si yükleme sırasında yayın tarihini otomatik belirler
+
+      const metadata = {
+        snippet: {
+          title: title,
+          description: description
+        },
+        status: {
+          privacyStatus: privacy
+        }
+      };
+
+      const form = new FormData();
+      form.append('snippet', new Blob([JSON.stringify(metadata)], { type: 'application/json' }));
+      form.append('video', file);
+
+      try {
+        const response = await fetch('https://www.googleapis.com/upload/youtube/v3/videos?part=snippet,status', {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${accessToken}`
+          },
+          body: form
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+          log("YouTube'a Video yüklendi. Video ID: " + result.id);
+
+          if (thumbnailInput.files.length) {
+            await uploadThumbnail(result.id, thumbnailInput.files[0]);
+          }
+        } else {
+          log("Hata: " + JSON.stringify(result));
+        }
+
+      } catch (err) {
+        log("Yükleme hatası: " + err.message);
+      }
+    };
+
+    async function uploadThumbnail(videoId, thumbnailFile) {
+      log("YouTube'a Kapak yükleniyor...");
+
+      const form = new FormData();
+      form.append('media', thumbnailFile);
+
+      const res = await fetch(`https://www.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=${videoId}`, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${accessToken}`
+        },
+        body: form
+      });
+
+      const result = await res.json();
+
+      if (res.ok) {
+        log("YouTube'a Kapak yüklendi.");
+      } else {
+        log("YouTube'a Kapak yükleme hatası: " + JSON.stringify(result));
+      }
+    }
+  </script>
+</body>
+</html>
