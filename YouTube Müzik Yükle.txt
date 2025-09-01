@@ -28,6 +28,7 @@
       color: #fff;
       cursor: pointer;
       transition: 0.2s;
+      border: none;
     }
     button:hover { background: #ff416c; }
     .btn-link {
@@ -38,6 +39,7 @@
       color: #fff;
       text-decoration: none;
       border-radius: 6px;
+      cursor: pointer;
     }
     #yt-desc, #log {
       text-align: left;
@@ -49,6 +51,10 @@
       border-radius: 8px;
       font-size: 13px;
       overflow-x: auto;
+    }
+    #shareButtons {
+      display: none;
+      margin-top: 20px;
     }
   </style>
 </head>
@@ -109,6 +115,18 @@
     <a class="btn-link" href="https://kudukomuzikyapim.blogspot.com/p/yaynlar_28.html" target="_blank">Yayınlar Sayfası</a>
   </div>
 
+  <!-- Paylaşım Butonları -->
+  <div id="shareButtons">
+    <h3>Videoyu Paylaş:</h3>
+    <a id="whatsappBtn" class="btn-link" href="#" target="_blank">📲 WhatsApp</a>
+    <a id="facebookBtn" class="btn-link" href="#" target="_blank">📘 Facebook</a>
+    <a id="twitterBtn" class="btn-link" href="#" target="_blank">🐦 X (Twitter)</a>
+    <a id="telegramBtn" class="btn-link" href="#" target="_blank">💬 Telegram</a>
+    <a id="emailBtn" class="btn-link" href="#" target="_blank">📧 E-Posta</a>
+    <a id="copyLinkBtn" class="btn-link" href="#" onclick="copyVideoLink()">🔗 Bağlantıyı Kopyala</a>
+    <a id="embedBtn" class="btn-link" href="#" onclick="copyEmbedCode()">📎 Embed Kodunu Kopyala</a>
+  </div>
+
   <script>
     function copyToClipboard(id) {
       const el = document.getElementById(id);
@@ -141,6 +159,8 @@
       const script = document.createElement('script');
       script.src = 'https://accounts.google.com/gsi/client';
       document.body.appendChild(script);
+
+      setupShareLinks();
     };
 
     document.getElementById('auth').onclick = () => {
@@ -151,6 +171,8 @@
           accessToken = tokenResponse.access_token;
           document.getElementById('uploadYT').disabled = false;
           document.getElementById('uploadDrive').disabled = false;
+
+          document.getElementById('shareButtons').style.display = 'block';
         }
       });
       tokenClient.requestAccessToken();
@@ -166,7 +188,6 @@
       const title = document.getElementById('title').value || 'Şarkı Adı (Official Music)';
       const description = document.getElementById('desc').value || '';
       const privacy = document.getElementById('privacy').value;
-      const releaseDate = document.getElementById('releaseDate').value;
 
       if (!fileInput.files.length) {
         alert("Lütfen bir video dosyası seçin.");
@@ -175,10 +196,7 @@
 
       const file = fileInput.files[0];
 
-      log("YouTube'a Video yükleniyor...");
-
-      // YouTube açıklamasına tarih eklemiyoruz (kullanıcının metnini olduğu gibi gönderiyoruz)
-      // YouTube API'si yükleme sırasında yayın tarihini otomatik belirler
+      log("YouTube'a Video Yükleniyor...");
 
       const metadata = {
         snippet: {
@@ -206,7 +224,8 @@
         const result = await response.json();
 
         if (response.ok) {
-          log("YouTube'a Video yüklendi. Video ID: " + result.id);
+          log("YouTube'a Video Yüklendi. Video ID: " + result.id);
+          updateShareLinks(result.id);
 
           if (thumbnailInput.files.length) {
             await uploadThumbnail(result.id, thumbnailInput.files[0]);
@@ -221,7 +240,7 @@
     };
 
     async function uploadThumbnail(videoId, thumbnailFile) {
-      log("YouTube'a Kapak yükleniyor...");
+      log("YouTube'a Kapak Yükleniyor...");
 
       const form = new FormData();
       form.append('media', thumbnailFile);
@@ -237,9 +256,48 @@
       const result = await res.json();
 
       if (res.ok) {
-        log("YouTube'a Kapak yüklendi.");
+        log("YouTube'a Kapak Yüklendi.");
       } else {
-        log("YouTube'a Kapak yükleme hatası: " + JSON.stringify(result));
+        log("YouTube'a Kapak Yükleme hatası: " + JSON.stringify(result));
+      }
+    }
+
+    function updateShareLinks(videoId) {
+      const videoUrl = `https://youtu.be/${videoId}`;
+      document.getElementById('whatsappBtn').href = `https://api.whatsapp.com/send?text=${encodeURIComponent(videoUrl)}`;
+      document.getElementById('facebookBtn').href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(videoUrl)}`;
+      document.getElementById('twitterBtn').href = `https://twitter.com/intent/tweet?url=${encodeURIComponent(videoUrl)}`;
+      document.getElementById('telegramBtn').href = `https://t.me/share/url?url=${encodeURIComponent(videoUrl)}`;
+      document.getElementById('emailBtn').href = `mailto:?subject=Videoyu İzle&body=${encodeURIComponent(videoUrl)}`;
+
+      window.currentVideoUrl = videoUrl;
+    }
+
+    function setupShareLinks() {
+      const defaultUrl = window.location.href;
+      document.getElementById('whatsappBtn').href = `https://api.whatsapp.com/send?text=${encodeURIComponent(defaultUrl)}`;
+      document.getElementById('facebookBtn').href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(defaultUrl)}`;
+      document.getElementById('twitterBtn').href = `https://twitter.com/intent/tweet?url=${encodeURIComponent(defaultUrl)}`;
+      document.getElementById('telegramBtn').href = `https://t.me/share/url?url=${encodeURIComponent(defaultUrl)}`;
+      document.getElementById('emailBtn').href = `mailto:?subject=Videoyu İzle&body=${encodeURIComponent(defaultUrl)}`;
+      window.currentVideoUrl = defaultUrl;
+    }
+
+    function copyVideoLink() {
+      if (window.currentVideoUrl) {
+        navigator.clipboard.writeText(window.currentVideoUrl)
+          .then(() => alert('Video bağlantısı kopyalandı!'))
+          .catch(() => alert('Kopyalama başarısız oldu.'));
+      }
+    }
+
+    function copyEmbedCode() {
+      if (window.currentVideoUrl) {
+        const videoId = window.currentVideoUrl.split('/').pop();
+        const embedCode = `<iframe width="560" height="315" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allowfullscreen></iframe>`;
+        navigator.clipboard.writeText(embedCode)
+          .then(() => alert('Embed kodu kopyalandı!'))
+          .catch(() => alert('Kopyalama başarısız oldu.'));
       }
     }
   </script>
