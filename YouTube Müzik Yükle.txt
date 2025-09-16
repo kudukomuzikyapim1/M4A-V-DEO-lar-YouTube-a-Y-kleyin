@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="tr">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -13,7 +14,11 @@
       background: #fff;
       color: #000;
     }
-    input, button, select, textarea {
+
+    input,
+    button,
+    select,
+    textarea {
       width: 90%;
       max-width: 500px;
       margin: 10px auto;
@@ -23,6 +28,7 @@
       font-size: 14px;
       display: block;
     }
+
     button {
       background: #ff4b2b;
       color: #fff;
@@ -30,7 +36,11 @@
       transition: 0.2s;
       border: none;
     }
-    button:hover { background: #ff416c; }
+
+    button:hover {
+      background: #ff416c;
+    }
+
     .btn-link {
       display: inline-block;
       margin: 10px;
@@ -41,7 +51,9 @@
       border-radius: 6px;
       cursor: pointer;
     }
-    #yt-desc, #log {
+
+    #yt-desc,
+    #log {
       text-align: left;
       background: #151515;
       color: #ddd;
@@ -52,12 +64,14 @@
       font-size: 13px;
       overflow-x: auto;
     }
+
     #shareButtons {
       display: none;
       margin-top: 20px;
     }
   </style>
 </head>
+
 <body>
 
   <h2></h2>
@@ -79,8 +93,8 @@
   <button id="uploadYT" disabled>YouTube'a Yükle</button>
   <button id="uploadDrive" disabled>Drive'a Yükle</button>
   <button id="uploadDriveLink" class="disabled-link" onclick="window.open('https://kudukomuzikyapim.blogspot.com/p/mp3u-videoya-donustur.html', '_blank')">
-  MP3'ü Videoya Dönüştür
-</button>
+    MP3'ü Videoya Dönüştür
+  </button>
 
   <a class="btn-link" href="https://kudukomuzikyapim.blogspot.com/p/muzik-albumu-satn-al.html" target="_blank">Satın Al</a>
 
@@ -136,13 +150,11 @@
       const text = el.innerText || el.textContent;
       navigator.clipboard.writeText(text).then(() => alert('Kopyalandı!'));
     }
-
     document.getElementById('title').addEventListener('input', (e) => {
       const t = e.target.value || 'Şarkı Adı (Official Music)';
       document.getElementById('sampleTitle').innerText = t;
       document.getElementById('sampleRepeat').innerText = t;
     });
-
     // releaseDate alanındaki tarihi formatlayıp "Released on YYYY-MM-DD" şeklinde gösterir
     document.getElementById('releaseDate').addEventListener('change', (e) => {
       const dateStr = e.target.value;
@@ -152,20 +164,15 @@
         document.getElementById('releaseDateParagraph').textContent = '';
       }
     });
-
     const CLIENT_ID = '831662029531-53aq67biqbtjjjv02fp971qau0lk8mp8.apps.googleusercontent.com';
     const SCOPES = 'https://www.googleapis.com/auth/youtube.upload https://www.googleapis.com/auth/drive.file https://www.googleapis.com/auth/youtube';
-
     let accessToken = null;
-
     window.onload = () => {
       const script = document.createElement('script');
       script.src = 'https://accounts.google.com/gsi/client';
       document.body.appendChild(script);
-
       setupShareLinks();
     };
-
     document.getElementById('auth').onclick = () => {
       const tokenClient = google.accounts.oauth2.initTokenClient({
         client_id: CLIENT_ID,
@@ -174,7 +181,6 @@
           accessToken = tokenResponse.access_token;
           document.getElementById('uploadYT').disabled = false;
           document.getElementById('uploadDrive').disabled = false;
-
           document.getElementById('shareButtons').style.display = 'block';
         }
       });
@@ -184,23 +190,18 @@
     function log(msg) {
       document.getElementById('log').textContent += msg + '\n';
     }
-
     document.getElementById('uploadYT').onclick = async () => {
       const fileInput = document.getElementById('file');
       const thumbnailInput = document.getElementById('thumbnail');
       const title = document.getElementById('title').value || 'Şarkı Adı (Official Music)';
       const description = document.getElementById('desc').value || '';
       const privacy = document.getElementById('privacy').value;
-
       if (!fileInput.files.length) {
         alert("Lütfen bir video dosyası seçin.");
         return;
       }
-
       const file = fileInput.files[0];
-
       log("YouTube'a Video Yükleniyor...");
-
       const metadata = {
         snippet: {
           title: title,
@@ -210,11 +211,11 @@
           privacyStatus: privacy
         }
       };
-
       const form = new FormData();
-      form.append('snippet', new Blob([JSON.stringify(metadata)], { type: 'application/json' }));
+      form.append('snippet', new Blob([JSON.stringify(metadata)], {
+        type: 'application/json'
+      }));
       form.append('video', file);
-
       try {
         const response = await fetch('https://www.googleapis.com/upload/youtube/v3/videos?part=snippet,status', {
           method: 'POST',
@@ -223,31 +224,24 @@
           },
           body: form
         });
-
         const result = await response.json();
-
         if (response.ok) {
           log("YouTube'a Video Yüklendi. Video ID: " + result.id);
           updateShareLinks(result.id);
-
           if (thumbnailInput.files.length) {
             await uploadThumbnail(result.id, thumbnailInput.files[0]);
           }
         } else {
           log("Hata: " + JSON.stringify(result));
         }
-
       } catch (err) {
         log("Yükleme hatası: " + err.message);
       }
     };
-
     async function uploadThumbnail(videoId, thumbnailFile) {
       log("YouTube'a Kapak Yükleniyor...");
-
       const form = new FormData();
       form.append('media', thumbnailFile);
-
       const res = await fetch(`https://www.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=${videoId}`, {
         method: 'POST',
         headers: {
@@ -255,9 +249,7 @@
         },
         body: form
       });
-
       const result = await res.json();
-
       if (res.ok) {
         log("YouTube'a Kapak Yüklendi.");
       } else {
@@ -272,7 +264,6 @@
       document.getElementById('twitterBtn').href = `https://twitter.com/intent/tweet?url=${encodeURIComponent(videoUrl)}`;
       document.getElementById('telegramBtn').href = `https://t.me/share/url?url=${encodeURIComponent(videoUrl)}`;
       document.getElementById('emailBtn').href = `mailto:?subject=Videoyu İzle&body=${encodeURIComponent(videoUrl)}`;
-
       window.currentVideoUrl = videoUrl;
     }
 
@@ -305,4 +296,5 @@
     }
   </script>
 </body>
+
 </html>
