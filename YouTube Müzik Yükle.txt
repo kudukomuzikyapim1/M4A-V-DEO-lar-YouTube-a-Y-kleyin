@@ -1,5 +1,14 @@
 <!doctype html>
 <html lang="tr">
+<img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg" alt="YouTube" width="150"> <h2>M4A VİDEO'ları YouTube'a Yükleyin</h2>
+<p><strong>KudukoMüzikYapım</strong> google hesap ile giriş yaparak şifre gerektirmez %100 güvenilir: <strong></strong></p>
+<p><strong>KudukoMüzikYapım</strong> kullanıcıların şunları yapmasını sağlar: <strong>m4a video dosyalarını YouTube'a yükleyin</strong>. Bunları bir görselle birleştirerek videolara dönüştürür.</p>
+
+<p>Özellikle müzisyenler, yapımcılar ve kayıt stüdyoları için oldukça kullanışlıdır. Hizmet, 5 dakikalık bir m4a video klibini yalnızca 3 saniyede kodlayabilir ve m4a video dosyasını değiştirmeyerek <strong>kalite kaybı yaşanmasını önler</strong>.</p>
+
+<p>KudukoMüzikYapım ayrıca <strong>toplu yükleme modu</strong>, zamanlanmış yüklemeler, ID3 etiket desteği gibi kayıpsız m4a video formatları gibi birçok ek özellik sunar.</p>
+
+<p>2020'deki kuruluşundan bu yana, 100'den fazla kişi tarafından güvenilmektedir. <strong>1.500.000 kullanıcı</strong> ve tamamlanan <strong>38.000.000 yükleme</strong> ile başarısını kanıtlamıştır.</p>
 
 <head>
   <meta charset="utf-8" />
