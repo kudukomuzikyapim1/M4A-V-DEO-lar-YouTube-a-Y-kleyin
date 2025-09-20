@@ -140,7 +140,165 @@
 
     <a class="btn-link" href="https://kudukomuzikyapim.blogspot.com/p/yaynlanan-m4a-videolar.html" target="_blank">Yayınlar Sayfası</a>
   </div>
+<!doctype html>
 
+
+    
+    
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .feature-box {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .feature {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            width: 30%;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .feature img {
+            width: 40px;
+            height: 40px;
+        }
+        .feature h3 {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        .feature p {
+            color: #555;
+            font-size: 14px;
+        }
+    </style>
+
+
+
+    <h1>M4A VİDEO'ları YouTube'a Yükleyin Özellikleri</h1>
+    <div class="feature-box">
+        <div class="feature">
+            
+            <h3>Hızlı Yüklemeler</h3>
+            <p>3 saniyede M4A VİDEO'ları YouTube'a yükleyin.</p>
+        </div>
+        <div class="feature">
+            
+            <h3>Kod Dönüştürme Yok</h3>
+            <p>Sesiniz değiştirilmediği için kalite kaybı yaşanmaz.</p>
+        </div>
+        <div class="feature">
+           
+            <h3>Özellikler Açısından Zengin</h3>
+            <p>İdeal kullanıcı deneyimi için ekstra özelliklerle dolu.</p>
+        </div>
+        <div class="feature">
+          
+            <h3>Güvenilir</h3>
+            <p>2020 yılından bu yana faaliyet gösteren platformumuz, 1.500.000'den fazla kullanıcı tarafından 38.000.000 yüklemeye ulaşmıştır.</p>
+        </div>
+        <div class="feature">
+          
+            <h3>Basit</h3>
+            <p>Temiz tasarımı ve anlaşılır iş akışı KudukoMüzikYapım'u kullanmayı kolaylaştırır.</p>
+        </div>
+        <div class="feature">
+            
+            <h3>Profesyonel</h3>
+            <p>Kayıt stüdyoları, müzisyenler ve yapımcılar düşünülerek yaratıldı.</p>
+        </div>
+        <div class="feature">
+           
+            <h3>7/24 Müşteri Desteği</h3>
+            <p>Destek, doğrudan yazılım geliştiricileri tarafından sağlanır. Yanıtlar genellikle anında verilir.</p>
+        </div>
+        <div class="feature">
+          
+            <h3>Güvenli</h3>
+            <p>KudukoMüzikYapım hiçbir zaman şifrenize erişemez, tüm kimlik doğrulama YouTube API'si aracılığıyla gerçekleştirilir.</p>
+        </div>
+    </div>
+
+
+</!doctype> <div style="font-family: Arial, sans-serif;">
+
+  <!-- Açıklama Metni -->
+  <p style="font-size: 16px; margin-bottom: 30px;">
+    Ücretsiz YouTube yükleme hizmetine ek olarak, aşağıdaki ek özelliklerden yararlanmak için hesabınızı yükseltmeyi seçebilirsiniz:
+  </p>
+
+  <!-- Özellikler Kutuları -->
+  <div style="display: flex; flex-wrap: wrap; gap: 40px;">
+
+    <!-- Artırılmış Yükleme Kotası -->
+    <div style="flex: 1 1 300px; max-width: 300px;">
+      <div style="font-size: 30px; color: #e74c3c;">📈</div>
+      <h3 style="margin: 5px 0;">Artırılmış Yükleme Kotası</h3>
+      <p>Günlük YouTube kotanızın izin verdiği kadar video yükleyin.</p>
+    </div>
+
+    <!-- Reklam Yok -->
+    <div style="flex: 1 1 300px; max-width: 300px;">
+      <div style="font-size: 30px; color: #e74c3c;">🚫</div>
+      <h3 style="margin: 5px 0;">Reklam Yok</h3>
+      <p>Tamamen temiz, reklamsız bir deneyim</p>
+    </div>
+
+    <!-- Zamanlanmış Yüklemeler -->
+    <div style="flex: 1 1 300px; max-width: 300px;">
+      <div style="font-size: 30px; color: #e74c3c;">⏰</div>
+      <h3 style="margin: 5px 0;">Zamanlanmış Yüklemeler</h3>
+      <p>Yüklemenizin yayına girmesi için gelecekte bir tarih ve saat belirleyin.</p>
+    </div>
+
+    <!-- Açıklamayı ve Etiketleri Kaydet -->
+    <div style="flex: 1 1 300px; max-width: 300px;">
+      <div style="font-size: 30px; color: #e74c3c;">💾</div>
+      <h3 style="margin: 5px 0;">Açıklamayı ve Etiketleri Kaydet</h3>
+      <p>Her seferinde kopyalamak zorunda kalmamak için.</p>
+    </div>
+
+    <!-- Varsayılan Durumlar -->
+    <div style="flex: 1 1 300px; max-width: 300px;">
+      <div style="font-size: 30px; color: #e74c3c;">⚙️</div>
+      <h3 style="margin: 5px 0;">Varsayılan Durumlar</h3>
+      <p>Yükleme formunda Canlı/Özel, onay kutuları vb.</p>
+    </div>
+
+    <!-- ID3 Etiketlerini Kullan -->
+    <div style="flex: 1 1 300px; max-width: 300px;">
+      <div style="font-size: 30px; color: #e74c3c;">🎵</div>
+      <h3 style="margin: 5px 0;">ID3 Etiketlerini Kullan</h3>
+      <p>M4A VİDEO'ları YouTube'a ID3 bilgilerini çıkarın ve dinamik olarak başlığa, açıklamaya ve etiketlere ekleyin.</p>
+    </div>
+
+    <!-- ID3 Görüntülerini Kullan -->
+    <div style="flex: 1 1 300px; max-width: 300px;">
+      <div style="font-size: 30px; color: #e74c3c;">🖼️</div>
+      <h3 style="margin: 5px 0;">ID3 Görüntülerini Kullan</h3>
+      <p>Görüntüyü müzik dosyasının ID3 etiketinden çıkarın ve arka plan olarak kullanın.</p>
+    </div>
+
+    <!-- Arka Plan Resmini Kaydet -->
+    <div style="flex: 1 1 300px; max-width: 300px;">
+      <div style="font-size: 30px; color: #e74c3c;">📷</div>
+      <h3 style="margin: 5px 0;">Arka Plan Resmini Kaydet</h3>
+      <p>Böylece gelecekteki videolarınız için yeniden yükleme yapmanıza gerek kalmaz.</p>
+    </div>
+
+    <!-- Dosyaları URL ile Yükle -->
+    <div style="flex: 1 1 300px; max-width: 300px;">
+      <div style="font-size: 30px; color: #e74c3c;">🌐</div>
+      <h3 style="margin: 5px 0;">Dosyaları Bir URL Aracılığıyla Yükleyin</h3>
+      <p>Web sitenizde, Google Drive®'ta ve diğer hizmetlerde barındırılan dosyaları aktarır.</p>
+    </div>
+
+  </div>
+</div>
   <!-- Paylaşım Butonları -->
   <div id="shareButtons">
     <h3>Videoyu Paylaş:</h3>
@@ -307,4 +465,3 @@
 </body>
 
 </html>
-
