@@ -1,2 +1,2 @@
-# YouTube-M-zik-Y-kle
+# M4A-V-DEO-lar-YouTube-a-Y-kleyin
 YouTube Kanallarınıza M4A VİDEO'ları YouTube'a Yükleyebiliyorsunuz Kuduko Müzik Yapım sayesinde YouTube Kanallarınıza M4A VİDEO'ları YouTube'a Yüklemek için Google Client'de YouTube Apı Key V3 ü Etkinleştirmeniz Gerekiyor https://console.cloud.google.com Etkinleştirdiğinizden sonra OAuth client ID oradan yapmanız gereken kısımları almanız gerekiyor Yapamıyorsanız Web sitemdeki YouTube Müzik Yükle Seçeneğe Bakabilirsiniz https://kudukomuzikyapim.blogspot.com/p/m4a-videolar-youtubea-yukleyin.html
