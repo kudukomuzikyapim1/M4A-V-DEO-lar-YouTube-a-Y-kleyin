@@ -184,7 +184,7 @@
         <div class="feature">
             
             <h3>Hızlı Yüklemeler</h3>
-            <p>3 saniyede M4A VİDEO'ları YouTube'a yükleyin.</p>
+            <p>3 saniyede M4A VİDEO'ları YouTube'a Yükleyin.</p>
         </div>
         <div class="feature">
             
@@ -273,7 +273,7 @@
     <div style="flex: 1 1 300px; max-width: 300px;">
       <div style="font-size: 30px; color: #e74c3c;">🎵</div>
       <h3 style="margin: 5px 0;">ID3 Etiketlerini Kullan</h3>
-      <p>M4A VİDEO'ları YouTube'a ID3 bilgilerini çıkarın ve dinamik olarak başlığa, açıklamaya ve etiketlere ekleyin.</p>
+      <p>M4A VİDEO'ları YouTube'a Yükleyin ID3 bilgilerini çıkarın ve dinamik olarak başlığa, açıklamaya ve etiketlere ekleyin.</p>
     </div>
 
     <!-- ID3 Görüntülerini Kullan -->
@@ -294,7 +294,7 @@
     <div style="flex: 1 1 300px; max-width: 300px;">
       <div style="font-size: 30px; color: #e74c3c;">🌐</div>
       <h3 style="margin: 5px 0;">Dosyaları Bir URL Aracılığıyla Yükleyin</h3>
-      <p>Web sitenizde, Google Drive®'ta ve diğer hizmetlerde barındırılan dosyaları aktarır.</p>
+      <p>Web sitenizde, Google Drive'ta ve diğer hizmetlerde barındırılan dosyaları aktarır.</p>
     </div>
 
   </div>
