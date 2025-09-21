@@ -219,7 +219,7 @@
         <div class="feature">
           
             <h3>Güvenli</h3>
-            <p>KudukoMüzikYapım hiçbir zaman şifrenize erişemez, tüm kimlik doğrulama YouTube API'si aracılığıyla gerçekleştirilir.</p>
+            <p>M4A VİDEO'ları YouTube'a Yükleyin hiçbir zaman şifrenize erişemez, tüm kimlik doğrulama YouTube API'si aracılığıyla gerçekleştirilir.</p>
         </div>
     </div>
 
