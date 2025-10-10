@@ -101,8 +101,8 @@
   <button id="auth">Google ile Giriş Yap</button>
   <button id="uploadYT" disabled>YouTube'a Yükle</button>
   <button id="uploadDrive" disabled>Drive'a Yükle</button>
-  <button id="uploadDriveLink" class="disabled-link" onclick="window.open('https://kudukomuzikyapim.blogspot.com/p/mp3u-baglantya-donustur.html', '_blank')">
-    MP3'ü Bağlantıya Dönüştür
+  <button id="uploadDriveLink" class="disabled-link" onclick="window.open('https://kudukomuzikyapim.blogspot.com/p/m4adan-mp3e-donusturucu.html', '_blank')">
+    M4A'dan MP3'e Dönüştürücü
   </button>
 
   <a class="btn-link" href="https://kudukomuzikyapim.blogspot.com/p/muzik-albumu-satn-al.html" target="_blank">Satın Al</a>
