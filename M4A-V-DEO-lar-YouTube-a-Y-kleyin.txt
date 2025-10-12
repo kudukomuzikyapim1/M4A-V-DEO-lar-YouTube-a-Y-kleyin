@@ -103,7 +103,7 @@
   <button id="uploadDrive" disabled>Drive'a Yükle</button>
   <button id="uploadDriveLink" class="disabled-link" onclick="window.open('https://kudukomuzikyapim.blogspot.com/p/m4adan-mp3e-donusturucu.html', '_blank')">
     M4A'dan MP3'e Dönüştürücü
-  </button>
+  </button> <a class="btn-link" href="https://dijitalmuzikapiyonetimpaneli.42web.io" target="_blank">Dijital Müzik API Yönetim Paneli</a>
 
   <a class="btn-link" href="https://kudukomuzikyapim.blogspot.com/p/muzik-albumu-satn-al.html" target="_blank">Satın Al</a>
 
