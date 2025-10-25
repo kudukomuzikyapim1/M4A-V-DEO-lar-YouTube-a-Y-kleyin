@@ -1076,7 +1076,7 @@
                 <i class="fab fa-youtube logo"></i>
                 <div>
                     <h1>M4A VİDEO'ları YouTube'a Yükleyin</h1>
-                    <p>Müzik dosyalarınızı YouTube videolarına dönüştürün</p>
+                    <p>MP3, MP4, M4A, WAV, FLAC ve diğer ses dosyalarınızı kolayca YouTube videolarına dönüştürün. Profesyonel kalitede videolar oluşturun ve müzik kariyerinizi bir üst seviyeye taşıyın.</p>
                 </div>
             </div>
             
