@@ -1088,7 +1088,7 @@
         
         <div class="content">
             <div class="welcome-section">
-                <h2>🎵 Müziğinizi YouTube'a Yükleyin!</h2>
+                <h2>🎵 M4A VİDEO'ları YouTube'a Yükleyin!</h2>
                 <p>MP3, MP4, M4A, WAV, FLAC ve diğer ses dosyalarınızı kolayca YouTube videolarına dönüştürün. 
                    Profesyonel kalitede videolar oluşturun ve müzik kariyerinizi bir üst seviyeye taşıyın.</p>
             </div>
@@ -1381,13 +1381,13 @@
             
             <!-- Neden KudukoMüzikYapım? Bölümü -->
             <div class="features-section">
-                <h2>Neden KudukoMüzikYapım?</h2>
+                <h2>Neden M4A VİDEO'ları YouTube'a Yükleyin ?</h2>
                 
                 <div class="feature-grid">
                     <div class="feature-card">
                         <div class="feature-icon">⚡</div>
                         <h3>Hızlı Yüklemeler</h3>
-                        <p>3 saniyede YouTube'a video yükleyin.</p>
+                        <p>3 saniyede M4A VİDEO'ları YouTube'a Yükleyin.</p>
                     </div>
                     <div class="feature-card">
                         <div class="feature-icon">🎯</div>
@@ -1397,7 +1397,7 @@
                     <div class="feature-card">
                         <div class="feature-icon">🔒</div>
                         <h3>Güvenli</h3>
-                        <p>YouTube Video Yükleme hiçbir zaman şifrenize erişemez.</p>
+                        <p>M4A VİDEO'ları YouTube'a Yükleyin hiçbir zaman şifrenize erişemez.</p>
                     </div>
                     <div class="feature-card">
                         <div class="feature-icon">🎵</div>
@@ -1407,7 +1407,7 @@
                     <div class="feature-card">
                         <div class="feature-icon">💫</div>
                         <h3>Basit</h3>
-                        <p>Temiz tasarımı ve anlaşılır iş akışı KudukoMüzikYapım'u kullanmayı kolaylaştırır.</p>
+                        <p>Temiz tasarımı ve anlaşılır iş akışı M4A VİDEO'ları YouTube'a Yükleyin'u kullanmayı kolaylaştırır.</p>
                     </div>
                     <div class="feature-card">
                         <div class="feature-icon">📞</div>
@@ -1423,7 +1423,7 @@
                
             </div>
             <p></p>
-            <p style="margin-top: 10px; font-size: 0.8rem;">YouTube Video Yükleme hiçbir zaman şifrenize erişemez, tüm kimlik doğrulama YouTube API'si aracılığıyla gerçekleştirilir.</p>
+            <p style="margin-top: 10px; font-size: 0.8rem;">M4A VİDEO'ları YouTube'a Yükleyin hiçbir zaman şifrenize erişemez, tüm kimlik doğrulama YouTube API'si aracılığıyla gerçekleştirilir.</p>
         </div>
     </div>
 
